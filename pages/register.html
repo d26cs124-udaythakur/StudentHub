@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub - Register</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="StudentHub Logo">
+      <span>StudentHub</span>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="register-form">
+      <h1>Register</h1>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile_no">Mobile No.</label>
+          <input type="text" id="mobile_no" name="mobile_no" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password" id="confirmpassword" name="confirmpassword" required autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="course">Course</label>
+          <select id="course" name="course">
+          <option value="CSE">CSE</option>
+          <option value="CE">CE</option>
+          <option value="IT">IT</option>
+          <option value="EC">EC</option>
+          <option value="EE">EE</option>
+          <option value="ME">ME</option>
+          <option value="CH">CH</option>
+          <option value="CI">CI</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="year">Academic Year</label>
+          <select id="year" name="year">
+          <option value="First">First</option>
+          <option value="Second">Second</option>
+          <option value="Third">Third</option>
+          <option value="Fourth">Fourth</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="gender-group">
+          <input type="radio" id="gender" name="male" value="Male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="gender" name="female" value="Female">
+          <label for="female">Female</label><br>
+          <input type="radio" id="gender" name="others" value="Others">
+          <label for="others">Others</label><br>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="terms">
+          <label>Agree to Terms and Conditions</label>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer navigation">
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    <p>&copy; StudentHub</p>
+  </footer>
+  <script>
+    if(fullname === ""){
+      document.getElementById("fullname").textContent="Fullname is empty.";
+    }
+  </script>
+</body>
+</html>

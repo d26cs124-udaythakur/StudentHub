@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub - Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="StudentHub Logo">
+      <span>StudentHub Admin</span>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="#">Manage Students</a></li>
+        <li><a href="events.html">Manage Events</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome, Admin</h1>
+
+    <section class="widgets">
+      <article class="widget">
+        <h2>Total Students</h2>
+        <p>1,245</p>
+      </article>
+      <article class="widget">
+        <h2>Total Events</h2>
+        <p>18 active events</p>
+      </article>
+      <article class="widget">
+        <h2>Pending Feedback</h2>
+        <p>7 unread</p>
+      </article>
+      <article class="widget">
+        <h2>Notices</h2>
+        <p>3 published</p>
+      </article>
+    </section>
+
+    <section class="recent-activity">
+      <h2>Recent Activity</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><time datetime="2026-08-01">Aug 1, 2026</time></td>
+            <td>New event "Tech Fest 2026" created</td>
+          </tr>
+          <tr>
+            <td><time datetime="2026-07-30">Jul 30, 2026</time></td>
+            <td>25 new student registrations approved</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer navigation">
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    <p>&copy; StudentHub</p>
+  </footer>
+</body>
+</html>
