@@ -1,56 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub - FAQs</title>
-  <link rel="stylesheet" href="faq.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Frequently asked questions about StudentHub.">
+
+    <title>StudentHub | FAQ</title>
+
+    <link rel="stylesheet" href="../css/faq.css">
+    <script src="../js/faq.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="StudentHub Logo">
-      <span>StudentHub</span>
-    </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Frequently Asked Questions</h1>
+    <!-- HEADER -->
+    <header class="site-header">
 
-    <section class="faq-list">
-      <details>
-        <summary>How do I register for an event?</summary>
-        <p>Go to the Events page, select an event, and click the Register button.</p>
-      </details>
+        <nav class="navbar" aria-label="Main navigation">
 
-      <details>
-        <summary>How can I reset my password?</summary>
-        <p>Click "Forgot Password?" on the Login page and follow the instructions sent to your email.</p>
-      </details>
+            <a href="../index.html" class="logo">
+                StudentHub
+            </a>
 
-      <details>
-        <summary>Whom do I contact for technical issues?</summary>
-        <p>Use the Contact page to reach out to our support team.</p>
-      </details>
-    </section>
-  </main>
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
 
-  <footer>
-    <nav aria-label="Footer navigation">
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </nav>
-    <p>&copy; StudentHub</p>
-  </footer>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home.html">Portal Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="faq.html" aria-current="page">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="nav-button">Register</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                Need help?
+            </p>
+
+            <h1>
+                Frequently Asked Questions
+            </h1>
+
+            <p>
+                Find quick answers to common StudentHub questions.
+            </p>
+
+        </section>
+
+
+        <section class="faq-list" aria-label="Frequently asked questions">
+
+
+            <details>
+
+                <summary>
+                    What is StudentHub?
+                </summary>
+
+                <p>
+                    StudentHub is a centralized student portal
+                    for academic information, events, notices,
+                    resources and student services.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How do I create an account?
+                </summary>
+
+                <p>
+                    Open the Register page, complete the required
+                    information and accept the terms and conditions.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How do I access my dashboard?
+                </summary>
+
+                <p>
+                    Use the Login page and then open the Dashboard
+                    from the navigation menu.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can StudentHub be expanded later?
+                </summary>
+
+                <p>
+                    Yes. Backend, database, authentication and
+                    REST-style APIs can be added in future practicals.
+                </p>
+
+            </details>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <section>
+                <h2>StudentHub</h2>
+                <p>
+                    A centralized student portal for academic
+                    and student services.
+                </p>
+            </section>
+
+            <nav aria-label="Footer navigation">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All rights reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>

@@ -1,66 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub - Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="StudentHub student dashboard.">
+
+    <title>StudentHub | Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/dashboard.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="StudentHub Logo">
-      <span>StudentHub</span>
-    </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="index.html">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Welcome, Student</h1>
+    <!-- HEADER -->
+    <header class="site-header">
 
-    <section class="widgets">
-      <article class="widget">
-        <h2>Attendance</h2>
-        <p>92% overall attendance</p>
-      </article>
-      <article class="widget">
-        <h2>Assignments</h2>
-        <p>3 pending submissions</p>
-      </article>
-      <article class="widget">
-        <h2>Events</h2>
-        <p>2 upcoming events</p>
-      </article>
-      <article class="widget">
-        <h2>Notices</h2>
-        <p>1 new notice</p>
-      </article>
-    </section>
+        <nav class="navbar" aria-label="Main navigation">
 
-    <section class="recent-activity">
-      <h2>Recent Activity</h2>
-      <ul>
-        <li>Submitted Assignment 2 - Data Structures</li>
-        <li>Registered for Tech Fest 2026</li>
-        <li>Attendance marked for Physics Lab</li>
-      </ul>
-    </section>
-  </main>
+            <a href="../index.html" class="logo">
+                StudentHub
+            </a>
 
-  <footer>
-    <nav aria-label="Footer navigation">
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </nav>
-    <p>&copy; StudentHub</p>
-  </footer>
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home.html">Portal Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="nav-button">Register</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                Student area
+            </p>
+
+            <h1>
+                Student Dashboard
+            </h1>
+
+            <p id="welcomeMessage">
+                Welcome back, Student.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-grid" aria-label="Dashboard modules">
+
+            <article class="card">
+
+                <h2>
+                    Courses
+                </h2>
+
+                <p>
+                    View your current courses and academic information.
+                </p>
+
+                <a href="profile.html">
+                    View Profile
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h2>
+                    Notices
+                </h2>
+
+                <p>
+                    Check the latest student announcements.
+                </p>
+
+                <button
+                    type="button"
+                    id="showNoticeBtn">
+                    Show Latest Notice
+                </button>
+
+                <p
+                    id="noticeOutput"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+                <button
+                    type="button"
+                    id="openNoticeModal">
+                    Open Notice Popup
+                </button>
+
+            </article>
+
+
+            <article class="card">
+
+                <h2>
+                    Events
+                </h2>
+
+                <p>
+                    Explore upcoming student events.
+                </p>
+
+                <a href="events.html">
+                    View Events
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h2>
+                    Resources
+                </h2>
+
+                <p>
+                    Access useful learning resources.
+                </p>
+
+                <a href="home.html#resources">
+                    View Resources
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <!-- Modal for Practical 4 -->
+
+        <dialog
+            id="noticeModal"
+            aria-labelledby="noticeModalTitle">
+
+            <h2 id="noticeModalTitle">
+                Latest Notice
+            </h2>
+
+            <p>
+                Remember to check your academic schedule
+                and upcoming assignment submissions.
+            </p>
+
+            <button
+                type="button"
+                id="closeNoticeModal">
+                Close
+            </button>
+
+        </dialog>
+
+
+        <section class="content-section">
+
+            <h2>
+                User Interface Preferences
+            </h2>
+
+            <button
+                type="button"
+                id="themeToggle"
+                aria-pressed="false">
+                Toggle Theme
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <section>
+                <h2>StudentHub</h2>
+                <p>
+                    A centralized student portal for academic
+                    and student services.
+                </p>
+            </section>
+
+            <nav aria-label="Footer navigation">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All rights reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>

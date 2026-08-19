@@ -1,107 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub - Register</title>
-  <link rel="stylesheet" href="register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="StudentHub student registration form with frontend validation.">
+
+    <title>StudentHub | Registration</title>
+
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/register.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="StudentHub Logo">
-      <span>StudentHub</span>
-    </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="register-form">
-      <h1>Register</h1>
-      <form action="#" method="post">
-        <div class="form-group">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="mobile_no">Mobile No.</label>
-          <input type="text" id="mobile_no" name="mobile_no" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required autocomplete="new-password">
-        </div>
-        <div class="form-group">
-          <label for="confirmpassword">Confirm Password</label>
-          <input type="password" id="confirmpassword" name="confirmpassword" required autocomplete="new-password">
-        </div>
-        <div class="form-group">
-          <label for="course">Course</label>
-          <select id="course" name="course">
-          <option value="CSE">CSE</option>
-          <option value="CE">CE</option>
-          <option value="IT">IT</option>
-          <option value="EC">EC</option>
-          <option value="EE">EE</option>
-          <option value="ME">ME</option>
-          <option value="CH">CH</option>
-          <option value="CI">CI</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="year">Academic Year</label>
-          <select id="year" name="year">
-          <option value="First">First</option>
-          <option value="Second">Second</option>
-          <option value="Third">Third</option>
-          <option value="Fourth">Fourth</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="gender">Gender</label>
-          <div class="gender-group">
-          <input type="radio" id="gender" name="male" value="Male">
-          <label for="male">Male</label><br>
-          <input type="radio" id="gender" name="female" value="Female">
-          <label for="female">Female</label><br>
-          <input type="radio" id="gender" name="others" value="Others">
-          <label for="others">Others</label><br>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="terms">
-          <label>Agree to Terms and Conditions</label>
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
-    </section>
-  </main>
+    <!-- HEADER -->
+    <header class="site-header">
 
-  <footer>
-    <nav aria-label="Footer navigation">
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </nav>
-    <p>&copy; StudentHub</p>
-  </footer>
-  <script>
-    if(fullname === ""){
-      document.getElementById("fullname").textContent="Fullname is empty.";
-    }
-  </script>
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="../index.html" class="logo">
+                StudentHub
+            </a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home.html">Portal Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="register.html"
+                       class="nav-button"
+                       aria-current="page">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                Create your account
+            </p>
+
+            <h1>
+                Student Registration
+            </h1>
+
+            <p>
+                Complete the form below to create your StudentHub account.
+            </p>
+
+        </section>
+
+
+        <section class="form-section" aria-labelledby="registration-title">
+
+            <h2 id="registration-title">
+                Registration Form
+            </h2>
+
+
+            <form
+                id="registrationForm"
+                novalidate>
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <fieldset>
+
+                    <legend>
+                        Personal Information
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            minlength="3"
+                            maxlength="50"
+                            required
+                            aria-describedby="nameError">
+
+                        <small
+                            id="nameError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            aria-describedby="emailError">
+
+                        <small
+                            id="emailError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="mobile">
+                            Mobile Number
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            name="mobile"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                            aria-describedby="mobileError">
+
+                        <small
+                            id="mobileError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                            aria-describedby="passwordHelp passwordError">
+
+                        <small id="passwordHelp">
+                            Minimum 8 characters with uppercase,
+                            lowercase, number and special character.
+                        </small>
+
+                        <meter
+                            id="passwordStrength"
+                            min="0"
+                            max="4"
+                            value="0">
+                            0 out of 4
+                        </meter>
+
+                        <span id="strengthText">
+                            Password strength: None
+                        </span>
+
+                        <small
+                            id="passwordError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            autocomplete="new-password"
+                            required
+                            aria-describedby="confirmPasswordError">
+
+                        <small
+                            id="confirmPasswordError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- ACADEMIC INFORMATION -->
+
+                <fieldset>
+
+                    <legend>
+                        Academic Information
+                    </legend>
+
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            Course
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <select
+                            id="course"
+                            name="course"
+                            required
+                            aria-describedby="courseError">
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option value="computer-science">
+                                Computer Science
+                            </option>
+
+                            <option value="information-technology">
+                                Information Technology
+                            </option>
+
+                            <option value="electronics">
+                                Electronics & Communication
+                            </option>
+
+                            <option value="mechanical">
+                                Mechanical Engineering
+                            </option>
+
+                        </select>
+
+                        <small
+                            id="courseError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="year">
+                            Year
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <select
+                            id="year"
+                            name="year"
+                            required
+                            aria-describedby="yearError">
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="first">
+                                First Year
+                            </option>
+
+                            <option value="second">
+                                Second Year
+                            </option>
+
+                            <option value="third">
+                                Third Year
+                            </option>
+
+                        </select>
+
+                        <small
+                            id="yearError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </div>
+
+
+                    <fieldset>
+
+                        <legend>
+                            Gender
+                            <span aria-hidden="true">*</span>
+                        </legend>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="male">
+                                Male
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="female">
+                                Female
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="other">
+                                Other
+                            </label>
+
+                        </div>
+
+                        <small
+                            id="genderError"
+                            class="error-message"
+                            aria-live="polite">
+                        </small>
+
+                    </fieldset>
+
+                </fieldset>
+
+
+                <!-- TERMS -->
+
+                <div class="form-group checkbox-group">
+
+                    <label for="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                            aria-describedby="termsError">
+
+                        I accept the Terms and Conditions
+                        <span aria-hidden="true">*</span>
+
+                    </label>
+
+                    <small
+                        id="termsError"
+                        class="error-message"
+                        aria-live="polite">
+                    </small>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-actions">
+
+                    <button type="submit">
+                        Create Account
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="secondary-button">
+                        Clear Form
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="formStatus"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <section>
+                <h2>StudentHub</h2>
+
+                <p>
+                    A centralized student portal for academic
+                    and student services.
+                </p>
+            </section>
+
+            <nav aria-label="Footer navigation">
+
+                <h2>Quick Links</h2>
+
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All rights reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>

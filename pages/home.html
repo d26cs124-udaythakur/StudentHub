@@ -1,50 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub - Home</title>
-  <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="StudentHub student portal home page.">
+
+    <title>StudentHub | Portal Home</title>
+
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/home.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="StudentHub Logo">
-      <span>StudentHub</span>
-    </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="index.html">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome back, Student!</h1>
-      <p>Manage academics in one place.</p>
-    </section>
+    <!-- HEADER -->
+    <header class="site-header">
 
-    <section class="announcements">
-      <h2>Latest Announcements</h2>
-      <ul>
-        <li><article>Event 1</article></li>
-        <li><article>Event 2</article></li>
-        <li><article>Event 3</article></li>
-      </ul>
-    </section>
-  </main>
+        <nav class="navbar" aria-label="Main navigation">
 
-  <footer>
-    <nav aria-label="Footer navigation">
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </nav>
-    <p>&copy; StudentHub</p>
-  </footer>
+            <a href="../index.html" class="logo">
+                StudentHub
+            </a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home.html" aria-current="page">Portal Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="nav-button">Register</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <p class="eyebrow">
+                Student services
+            </p>
+
+            <h1>
+                Student Portal Home
+            </h1>
+
+            <p>
+                Quickly access important academic and student services.
+            </p>
+
+        </section>
+
+
+        <section id="resources" class="card-section">
+
+            <h2>
+                Student Services
+            </h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>Courses</h3>
+                    <p>
+                        View your academic courses and information.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Assignments</h3>
+                    <p>
+                        Keep track of assignments and deadlines.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Resources</h3>
+                    <p>
+                        Access useful learning materials.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Notices</h3>
+                    <p>
+                        Read important student announcements.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <section>
+                <h2>StudentHub</h2>
+                <p>
+                    A centralized student portal for academic
+                    and student services.
+                </p>
+            </section>
+
+            <nav aria-label="Footer navigation">
+
+                <h2>Quick Links</h2>
+
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All rights reserved.
+        </p>
+
+    </footer>
+
 </body>
 </html>

@@ -3,255 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub Portal</title>
-    <link rel="stylesheet" href="index.css">
+
+    <meta name="description"
+          content="StudentHub - A centralized student portal for academic information, events, resources and student services.">
+
+    <meta name="keywords"
+          content="StudentHub, student portal, education, students">
+
+    <meta name="author" content="StudentHub Team">
+
+    <title>StudentHub | Home</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
 </head>
+
 <body>
 
-<header>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
 
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <h2>StudentHub</h2>
-    </div>
+        <nav class="navbar" aria-label="Main navigation">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+            <a href="index.html" class="logo">
+                StudentHub
+            </a>
 
-</header>
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
 
-<main>
+            <ul class="nav-links" id="navLinks">
 
-    <!-- Hero Section -->
+                <li>
+                    <a href="index.html" aria-current="page">
+                        Home
+                    </a>
+                </li>
 
-    <section class="hero">
+                <li>
+                    <a href="pages/about.html">
+                        About
+                    </a>
+                </li>
 
-        <h1>Welcome to StudentHub</h1>
+                <li>
+                    <a href="pages/events.html">
+                        Events
+                    </a>
+                </li>
 
-        <p>
-            Your one-stop portal for attendance, assignments,
-            events, notices and academic resources.
+                <li>
+                    <a href="pages/faq.html">
+                        FAQ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/login.html">
+                        Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/register.html" class="nav-button">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <section class="hero" aria-labelledby="hero-title">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    Welcome to StudentHub
+                </p>
+
+                <h1 id="hero-title">
+                    Your Student Life, One Place
+                </h1>
+
+                <p>
+                    StudentHub provides students with easy access to
+                    academic information, events, resources and student
+                    services.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="pages/register.html" class="button">
+                        Get Started
+                    </a>
+
+                    <a href="pages/login.html" class="button secondary">
+                        Student Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features" aria-labelledby="features-title">
+
+            <h2 id="features-title">
+                StudentHub Features
+            </h2>
+
+            <div class="card-grid">
+
+                <article class="feature-card">
+
+                    <h3>
+                        Student Dashboard
+                    </h3>
+
+                    <p>
+                        Access important student information,
+                        activities and services from one dashboard.
+                    </p>
+
+                    <a href="pages/dashboard.html">
+                        Open Dashboard
+                    </a>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>
+                        Events
+                    </h3>
+
+                    <p>
+                        Stay updated with academic, technical
+                        and student events.
+                    </p>
+
+                    <a href="pages/events.html">
+                        View Events
+                    </a>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>
+                        Resources
+                    </h3>
+
+                    <p>
+                        Find useful academic resources and
+                        student information.
+                    </p>
+
+                    <a href="pages/home.html">
+                        View Resources
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Practical 4: Dynamic UI hooks -->
+
+        <section class="highlights" aria-labelledby="highlights-title">
+
+            <h2 id="highlights-title">
+                StudentHub Highlights
+            </h2>
+
+            <div id="contentSlider" class="slider">
+
+                <article class="slide active">
+                    <h3>
+                        Academic Resources
+                    </h3>
+
+                    <p>
+                        Access useful learning resources from one place.
+                    </p>
+                </article>
+
+                <article class="slide" hidden>
+                    <h3>
+                        Campus Events
+                    </h3>
+
+                    <p>
+                        Discover upcoming academic and student events.
+                    </p>
+                </article>
+
+                <article class="slide" hidden>
+                    <h3>
+                        Student Services
+                    </h3>
+
+                    <p>
+                        Manage your student activities through StudentHub.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="slider-controls">
+
+                <button type="button" id="previousSlide">
+                    Previous
+                </button>
+
+                <button type="button" id="nextSlide">
+                    Next
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="cta" aria-labelledby="cta-title">
+
+            <h2 id="cta-title">
+                Ready to join StudentHub?
+            </h2>
+
+            <p>
+                Create your student account and explore the portal.
+            </p>
+
+            <a href="pages/register.html" class="button">
+                Create Account
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <section>
+                <h2>StudentHub</h2>
+
+                <p>
+                    A centralized student portal for academic
+                    and student services.
+                </p>
+            </section>
+
+
+            <nav aria-label="Footer navigation">
+
+                <h2>Quick Links</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All rights reserved.
         </p>
 
-        <a href="login.html" class="btn">Login</a>
-
-        <a href="register.html" class="btn">Register</a>
-
-    </section>
-
-    <!-- Statistics -->
-
-    <section class="stats">
-
-        <div class="card">
-            <h2>1200+</h2>
-            <p>Students</p>
-        </div>
-
-        <div class="card">
-            <h2>85+</h2>
-            <p>Faculty</p>
-        </div>
-
-        <div class="card">
-            <h2>40+</h2>
-            <p>Events</p>
-        </div>
-
-        <div class="card">
-            <h2>98%</h2>
-            <p>Attendance</p>
-        </div>
-
-    </section>
-
-    <!-- Features -->
-
-    <section>
-
-        <h2>Portal Features</h2>
-
-        <div class="features">
-
-            <article class="feature">
-                <h3>Attendance</h3>
-                <p>Track attendance instantly.</p>
-            </article>
-
-            <article class="feature">
-                <h3>Assignments</h3>
-                <p>View and submit assignments.</p>
-            </article>
-
-            <article class="feature">
-                <h3>Results</h3>
-                <p>Check examination results.</p>
-            </article>
-
-            <article class="feature">
-                <h3>Library</h3>
-                <p>Access digital resources.</p>
-            </article>
-
-            <article class="feature">
-                <h3>Events</h3>
-                <p>Register for campus events.</p>
-            </article>
-
-            <article class="feature">
-                <h3>Notices</h3>
-                <p>Latest college announcements.</p>
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- Announcements -->
-
-    <section>
-
-        <h2>Latest Announcements</h2>
-
-        <ul>
-
-            <li>Semester Registration Open</li>
-
-            <li>Hackathon Registration Started</li>
-
-            <li>Campus Placement Drive</li>
-
-            <li>Industrial Visit Registration</li>
-
-        </ul>
-
-    </section>
-
-    <!-- Events -->
-
-    <section>
-
-        <h2>Upcoming Events</h2>
-
-        <table>
-
-            <tr>
-                <th>Date</th>
-                <th>Event</th>
-                <th>Venue</th>
-            </tr>
-
-            <tr>
-                <td>12 Aug</td>
-                <td>Hackathon</td>
-                <td>Auditorium</td>
-            </tr>
-
-            <tr>
-                <td>15 Aug</td>
-                <td>Independence Day</td>
-                <td>College Ground</td>
-            </tr>
-
-            <tr>
-                <td>22 Aug</td>
-                <td>Placement Seminar</td>
-                <td>Seminar Hall</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-    <!-- Gallery -->
-
-    <section>
-
-        <h2>Campus Gallery</h2>
-
-        <div class="gallery">
-
-            <figure>
-                <img src="gallery1.jpg" alt="">
-                <figcaption>Library</figcaption>
-            </figure>
-
-            <figure>
-                <img src="gallery2.jpg" alt="">
-                <figcaption>Computer Lab</figcaption>
-            </figure>
-
-            <figure>
-                <img src="gallery3.jpg" alt="">
-                <figcaption>Campus</figcaption>
-            </figure>
-
-            <figure>
-                <img src="gallery4.jpg" alt="">
-                <figcaption>Seminar Hall</figcaption>
-            </figure>
-
-        </div>
-
-    </section>
-
-    <!-- Progress -->
-
-    <section>
-
-        <h2>Academic Progress</h2>
-
-        <label>Attendance</label>
-
-        <progress value="92" max="100"></progress>
-
-        <br><br>
-
-        <label>Overall Performance</label>
-
-        <meter value="0.88"></meter>
-
-    </section>
-
-    <!-- Newsletter -->
-
-    <section>
-
-        <h2>Subscribe</h2>
-
-        <form>
-
-            <input type="email"
-            placeholder="Enter Email">
-
-            <button>Subscribe</button>
-
-        </form>
-
-    </section>
-
-</main>
-
-<footer>
-
-    <h3>StudentHub</h3>
-
-    <p>Email : studenthub@gmail.com</p>
-
-    <p>Phone : +91 9876543210</p>
-
-    <p>&copy; 2026 StudentHub Portal</p>
-
-</footer>
+    </footer>
 
 </body>
 </html>

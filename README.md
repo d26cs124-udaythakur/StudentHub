@@ -141,7 +141,7 @@ This project is maintained using Git and GitHub. Changes will be committed and p
 
 ## Author
 
-
+StudentHub Semester Project
 
 ## License
 
