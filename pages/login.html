@@ -1,175 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to your StudentHub account.">
+    <title>StudentHub | Student Login</title>
 
-    <meta name="description"
-          content="StudentHub student login page.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>StudentHub | Login</title>
-
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Login Dedicated CSS -->
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/login.js" defer></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
     <header class="site-header">
+        <div class="container">
 
-        <nav class="navbar" aria-label="Main navigation">
+            <!-- TOP HEADER -->
+            <div class="top-header">
+                <!-- LOGO -->
+                <a href="../index.html" class="logo" aria-label="StudentHub Home">
+                    <span class="logo-icon"><i class="bi bi-mortarboard-fill"></i></span>
+                    StudentHub
+                </a>
 
-            <a href="../index.html" class="logo">
-                StudentHub
-            </a>
+                <!-- Header Actions: Theme Switcher & Login Status -->
+                <div class="header-actions">
+                    <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme">
+                        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                    </button>
 
-            <button
-                type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-                ☰
-            </button>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="home.html">Portal Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" aria-current="page">Login</a></li>
-                <li><a href="register.html" class="nav-button">Register</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <section class="page-header">
-
-            <h1>
-                Student Login
-            </h1>
-
-            <p>
-                Sign in to access your StudentHub dashboard.
-            </p>
-
-        </section>
-
-
-        <section class="form-section" aria-labelledby="login-title">
-
-            <h2 id="login-title">
-                Login
-            </h2>
-
-            <form id="loginForm" novalidate>
-
-                <div class="form-group">
-
-                    <label for="loginEmail">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        name="email"
-                        autocomplete="email"
-                        required
-                        aria-describedby="loginEmailError">
-
-                    <small
-                        id="loginEmailError"
-                        class="error-message"
-                        aria-live="polite">
-                    </small>
-
+                    <a href="login.html" class="login-link active" aria-current="page">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                    </a>
                 </div>
+            </div>
 
-
-                <div class="form-group">
-
-                    <label for="loginPassword">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        name="password"
-                        autocomplete="current-password"
-                        required
-                        aria-describedby="loginPasswordError">
-
-                    <small
-                        id="loginPasswordError"
-                        class="error-message"
-                        aria-live="polite">
-                    </small>
-
-                </div>
-
-
-                <button type="submit">
-                    Login
+            <!-- ================= NAVIGATION ================= -->
+            <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Main navigation">
+                <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#studentNav" aria-controls="studentNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <p id="loginStatus" role="status" aria-live="polite"></p>
+                <div class="collapse navbar-collapse" id="studentNav">
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Home</a>
+                        <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About</a>
+                        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+                        <a class="nav-link" href="events.html"><i class="bi bi-calendar-event me-1"></i> Events</a>
+                        <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i> FAQ</a>
+                        <a class="nav-link" href="feedback.html"><i class="bi bi-chat-square-dots me-1"></i> Feedback</a>
+                        <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact</a>
+                    </div>
+                </div>
+            </nav>
 
-            </form>
+        </div>
+    </header>
 
+    <!-- ================= MAIN ================= -->
+    <main>
 
-            <p>
-                Don't have an account?
-                <a href="register.html">
-                    Register here
-                </a>
-            </p>
+        <section class="login-section">
+            <div class="container">
 
+                <!-- INTRO -->
+                <div class="login-heading text-center">
+                    <span class="section-tag">
+                        <i class="bi bi-shield-lock-fill me-1"></i> STUDENT PORTAL
+                    </span>
+                    <h1>Student Portal Login</h1>
+                    <p class="welcome">
+                        Welcome back! Please enter your academic credentials to access your dashboard.
+                    </p>
+                </div>
+
+                <!-- ================= LOGIN BOX ================= -->
+                <div class="login-box-wrapper">
+                    <div class="login-box">
+
+                        <form id="loginForm" action="#" method="POST">
+
+                            <!-- EMAIL -->
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">
+                                    Student Email / ID <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                                    <input 
+                                        type="email" 
+                                        class="form-control" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="student@university.edu" 
+                                        autocomplete="email" 
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div class="form-group mb-3">
+                                <label for="password" class="form-label">
+                                    Password <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="bi bi-lock"></i></span>
+                                    <input 
+                                        type="password" 
+                                        class="form-control" 
+                                        id="password" 
+                                        name="password" 
+                                        placeholder="Enter your password" 
+                                        autocomplete="current-password" 
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- REMEMBER + FORGOT -->
+                            <div class="login-options mb-3">
+                                <label class="remember">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <span>Remember me</span>
+                                </label>
+
+                                <a href="#" id="forgotPassword" class="forgot-link">
+                                    Forgot Password?
+                                </a>
+                            </div>
+
+                            <!-- ================= CAPTCHA ================= -->
+                            <div class="captcha-section mb-3">
+                                <label for="captchaInput" class="form-label">
+                                    Security Verification <span class="text-danger">*</span>
+                                </label>
+
+                                <div class="captcha-display-box mb-2">
+                                    <span id="captchaText" class="captcha-code">A7K9P</span>
+                                    <button 
+                                        type="button" 
+                                        id="refreshCaptcha" 
+                                        class="btn-captcha-refresh" 
+                                        title="Refresh CAPTCHA" 
+                                        aria-label="Refresh CAPTCHA">
+                                        <i class="bi bi-arrow-clockwise"></i>
+                                    </button>
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="bi bi-shield-check"></i></span>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="captchaInput" 
+                                        name="captcha" 
+                                        placeholder="Enter the 5 characters shown above" 
+                                        pattern="A7K9P" 
+                                        title="Please enter the exact security code shown above"
+                                        autocomplete="off" 
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- ================= TERMS ================= -->
+                            <div class="terms-group mb-4">
+                                <label class="terms-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span>
+                                        I accept the 
+                                        <a href="#" id="termsLink" data-bs-toggle="modal" data-bs-target="#termsModal">
+                                            Terms &amp; Conditions
+                                        </a>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <!-- ================= LOGIN BUTTON ================= -->
+                            <button type="submit" class="login-button btn btn-primary">
+                                <span>Sign In to Dashboard</span>
+                                <i class="bi bi-box-arrow-in-right ms-1"></i>
+                            </button>
+
+                            <!-- ================= REGISTER LINK ================= -->
+                            <p class="register-text text-center mt-3 mb-0">
+                                Don't have an account?
+                                <a href="register.html">Register here</a>
+                            </p>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
 
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="footer-content">
-
-            <section>
-                <h2>StudentHub</h2>
-                <p>
-                    A centralized student portal for academic
-                    and student services.
-                </p>
-            </section>
-
-            <nav aria-label="Footer navigation">
-                <h2>Quick Links</h2>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </nav>
-
+    <!-- ================= TERMS MODAL ================= -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold">Student Portal Terms &amp; Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body small">
+                    <p>1. <strong>Authorized Access:</strong> Only registered students, faculty, and administrative staff of the university are authorized to log in.</p>
+                    <p>2. <strong>Security:</strong> You are responsible for preserving credentials confidential. Never share your password.</p>
+                    <p>3. <strong>Academic Usage:</strong> All resources downloaded must comply with university academic honesty guidelines.</p>
+                </div>
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">I Agree</button>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <p class="copyright">
-            &copy; 2026 StudentHub. All rights reserved.
-        </p>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
 
+                <!-- ABOUT -->
+                <section class="footer-about">
+                    <h2><i class="bi bi-mortarboard-fill me-2 text-primary-accent"></i>StudentHub</h2>
+                    <p>
+                        Official university student management and academic collaboration ecosystem. Dedicated to scholastic innovation and student welfare.
+                    </p>
+                </section>
+
+                <!-- QUICK LINKS -->
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <h2>Quick Links</h2>
+                    <a href="../index.html"><i class="bi bi-chevron-right me-1"></i> Home</a>
+                    <a href="about.html"><i class="bi bi-chevron-right me-1"></i> About</a>
+                    <a href="events.html"><i class="bi bi-chevron-right me-1"></i> Events</a>
+                    <a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact</a>
+                </nav>
+
+                <!-- SUPPORT -->
+                <nav class="footer-links" aria-label="Support navigation">
+                    <h2>Support</h2>
+                    <a href="faq.html"><i class="bi bi-chevron-right me-1"></i> FAQ</a>
+                    <a href="feedback.html"><i class="bi bi-chevron-right me-1"></i> Feedback</a>
+                    <a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Helpdesk</a>
+                </nav>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="copyright text-center">
+                <p>&copy; 2026 StudentHub. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                themeIcon.className = 'bi bi-sun-fill';
+            } else {
+                themeIcon.className = 'bi bi-moon-stars-fill';
+            }
+        }
+
+        applyTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    </script>
+
+    <!-- Login JavaScript -->
+    <script src="../js/login.js"></script>
+
 </body>
+
 </html>

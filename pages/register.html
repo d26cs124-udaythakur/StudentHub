@@ -1,478 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your StudentHub student account.">
+    <title>StudentHub | Student Registration</title>
 
-    <meta name="description"
-          content="StudentHub student registration form with frontend validation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>StudentHub | Registration</title>
-
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Register Dedicated CSS -->
     <link rel="stylesheet" href="../css/register.css">
-    <script src="../js/register.js" defer></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
     <header class="site-header">
-
-        <nav class="navbar" aria-label="Main navigation">
-
-            <a href="../index.html" class="logo">
+        <div class="top-header container-fluid">
+            <a href="../index.html" class="logo" aria-label="StudentHub Home">
+                <span class="logo-icon"><i class="bi bi-mortarboard-fill"></i></span>
                 StudentHub
             </a>
 
-            <button
-                type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-                ☰
-            </button>
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                </button>
 
-            <ul class="nav-links" id="navLinks">
+                <a href="login.html" class="login-link">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                </a>
+            </div>
+        </div>
 
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="home.html">Portal Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li>
-                    <a href="register.html"
-                       class="nav-button"
-                       aria-current="page">
-                        Register
-                    </a>
-                </li>
+        <!-- ================= NAVIGATION ================= -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            </ul>
-
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-nav mx-auto">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Home</a>
+                        <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About</a>
+                        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+                        <a class="nav-link" href="events.html"><i class="bi bi-calendar-event me-1"></i> Events</a>
+                        <a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i> FAQ</a>
+                        <a class="nav-link" href="feedback.html"><i class="bi bi-chat-square-dots me-1"></i> Feedback</a>
+                        <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact</a>
+                    </div>
+                </div>
+            </div>
         </nav>
-
     </header>
 
-
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
-
-        <section class="page-header">
-
-            <p class="eyebrow">
-                Create your account
-            </p>
-
-            <h1>
-                Student Registration
-            </h1>
-
-            <p>
-                Complete the form below to create your StudentHub account.
-            </p>
-
-        </section>
-
-
-        <section class="form-section" aria-labelledby="registration-title">
-
-            <h2 id="registration-title">
-                Registration Form
-            </h2>
-
-
-            <form
-                id="registrationForm"
-                novalidate>
-
-
-                <!-- PERSONAL INFORMATION -->
-
-                <fieldset>
-
-                    <legend>
-                        Personal Information
-                    </legend>
-
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Full Name
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            autocomplete="name"
-                            minlength="3"
-                            maxlength="50"
-                            required
-                            aria-describedby="nameError">
-
-                        <small
-                            id="nameError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            autocomplete="email"
-                            required
-                            aria-describedby="emailError">
-
-                        <small
-                            id="emailError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="mobile">
-                            Mobile Number
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="mobile"
-                            name="mobile"
-                            inputmode="numeric"
-                            autocomplete="tel"
-                            pattern="[0-9]{10}"
-                            maxlength="10"
-                            required
-                            aria-describedby="mobileError">
-
-                        <small
-                            id="mobileError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="password">
-                            Password
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            autocomplete="new-password"
-                            minlength="8"
-                            required
-                            aria-describedby="passwordHelp passwordError">
-
-                        <small id="passwordHelp">
-                            Minimum 8 characters with uppercase,
-                            lowercase, number and special character.
-                        </small>
-
-                        <meter
-                            id="passwordStrength"
-                            min="0"
-                            max="4"
-                            value="0">
-                            0 out of 4
-                        </meter>
-
-                        <span id="strengthText">
-                            Password strength: None
-                        </span>
-
-                        <small
-                            id="passwordError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="confirmPassword">
-                            Confirm Password
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            autocomplete="new-password"
-                            required
-                            aria-describedby="confirmPasswordError">
-
-                        <small
-                            id="confirmPasswordError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-                </fieldset>
-
-
-                <!-- ACADEMIC INFORMATION -->
-
-                <fieldset>
-
-                    <legend>
-                        Academic Information
-                    </legend>
-
-
-                    <div class="form-group">
-
-                        <label for="course">
-                            Course
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <select
-                            id="course"
-                            name="course"
-                            required
-                            aria-describedby="courseError">
-
-                            <option value="">
-                                Select Course
-                            </option>
-
-                            <option value="computer-science">
-                                Computer Science
-                            </option>
-
-                            <option value="information-technology">
-                                Information Technology
-                            </option>
-
-                            <option value="electronics">
-                                Electronics & Communication
-                            </option>
-
-                            <option value="mechanical">
-                                Mechanical Engineering
-                            </option>
-
-                        </select>
-
-                        <small
-                            id="courseError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="year">
-                            Year
-                            <span aria-hidden="true">*</span>
-                        </label>
-
-                        <select
-                            id="year"
-                            name="year"
-                            required
-                            aria-describedby="yearError">
-
-                            <option value="">
-                                Select Year
-                            </option>
-
-                            <option value="first">
-                                First Year
-                            </option>
-
-                            <option value="second">
-                                Second Year
-                            </option>
-
-                            <option value="third">
-                                Third Year
-                            </option>
-
-                        </select>
-
-                        <small
-                            id="yearError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </div>
-
-
-                    <fieldset>
-
-                        <legend>
-                            Gender
-                            <span aria-hidden="true">*</span>
-                        </legend>
-
-                        <div class="radio-group">
-
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="male">
-                                Male
-                            </label>
-
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="female">
-                                Female
-                            </label>
-
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="other">
-                                Other
-                            </label>
+        <section class="register-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11 col-lg-9 col-xl-8">
+
+                        <!-- REGISTER CARD -->
+                        <div class="register-box">
+
+                            <div class="register-header">
+                                <div class="register-icon">
+                                    <i class="bi bi-person-vcard-fill"></i>
+                                </div>
+                                <h1>Student Registration</h1>
+                                <p>Fill in your details below to set up your StudentHub academic profile.</p>
+                            </div>
+
+                            <!-- FORM WITH NATIVE HTML5 VALIDATION -->
+                            <form id="registerForm" action="#" method="POST">
+
+                                <!-- 1. FULL NAME -->
+                                <div class="form-group mb-3">
+                                    <label for="fullname">Full Name <span class="text-danger">*</span></label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon"><i class="bi bi-person"></i></span>
+                                        <input 
+                                            type="text" 
+                                            id="fullname" 
+                                            name="fullname" 
+                                            class="form-control" 
+                                            placeholder="e.g. Rahul Sharma" 
+                                            pattern="^[A-Za-z\s]{3,50}$"
+                                            title="Letters only, minimum 3 characters"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 2. EMAIL & MOBILE NUMBER -->
+                                <div class="form-grid-2 mb-3">
+                                    <div class="form-group">
+                                        <label for="email">Student Email Address <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email" 
+                                                class="form-control" 
+                                                placeholder="student@university.edu" 
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mobile">Mobile Number <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-phone"></i></span>
+                                            <input 
+                                                type="tel" 
+                                                id="mobile" 
+                                                name="mobile" 
+                                                class="form-control" 
+                                                placeholder="10-digit mobile number" 
+                                                pattern="^[6-9][0-9]{9}$" 
+                                                maxlength="10" 
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3. GENDER RADIO TILES -->
+                                <div class="form-group mb-3">
+                                    <label class="d-block mb-2">Gender <span class="text-danger">*</span></label>
+                                    <div class="gender-radio-group">
+                                        <label class="gender-option">
+                                            <input type="radio" name="gender" value="male" required>
+                                            <span class="gender-pill">
+                                                <i class="bi bi-gender-male me-1"></i> Male
+                                            </span>
+                                        </label>
+                                        <label class="gender-option">
+                                            <input type="radio" name="gender" value="female" required>
+                                            <span class="gender-pill">
+                                                <i class="bi bi-gender-female me-1"></i> Female
+                                            </span>
+                                        </label>
+                                        <label class="gender-option">
+                                            <input type="radio" name="gender" value="other" required>
+                                            <span class="gender-pill">
+                                                <i class="bi bi-gender-ambiguous me-1"></i> Other
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- 4. COURSE & ACADEMIC YEAR -->
+                                <div class="form-grid-2 mb-3">
+                                    <div class="form-group">
+                                        <label for="course">Course / Degree <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-book"></i></span>
+                                            <select id="course" name="course" class="form-select" required>
+                                                <option value="" disabled selected>Select Course</option>
+                                                <option value="btech-cse">B.Tech - Computer Science &amp; Engineering</option>
+                                                <option value="btech-it">B.Tech - Information Technology</option>
+                                                <option value="bca">BCA - Computer Applications</option>
+                                                <option value="mca">MCA - Master of Computer Applications</option>
+                                                <option value="bba">BBA - Business Administration</option>
+                                                <option value="mba">MBA - Master of Business Administration</option>
+                                                <option value="bsc">B.Sc - Science &amp; Mathematics</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="year">Current Academic Year <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-calendar3"></i></span>
+                                            <select id="year" name="year" class="form-select" required>
+                                                <option value="" disabled selected>Select Year</option>
+                                                <option value="1">1st Year (Freshman)</option>
+                                                <option value="2">2nd Year (Sophomore)</option>
+                                                <option value="3">3rd Year (Junior)</option>
+                                                <option value="4">4th Year (Senior)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 5. PASSWORD & CONFIRM PASSWORD -->
+                                <div class="form-grid-2 mb-3">
+                                    <div class="form-group">
+                                        <label for="password">Password <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-lock"></i></span>
+                                            <input 
+                                                type="password" 
+                                                id="password" 
+                                                name="password" 
+                                                class="form-control" 
+                                                placeholder="At least 8 characters" 
+                                                minlength="8" 
+                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                title="Min 8 characters with at least 1 uppercase, 1 lowercase, and 1 number"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirm Password <span class="text-danger">*</span></label>
+                                        <div class="input-wrapper">
+                                            <span class="input-icon"><i class="bi bi-shield-lock"></i></span>
+                                            <input 
+                                                type="password" 
+                                                id="confirmPassword" 
+                                                name="confirmPassword" 
+                                                class="form-control" 
+                                                placeholder="Repeat password" 
+                                                minlength="8" 
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 6. CAPTCHA -->
+                                <div class="captcha-wrapper mb-3">
+                                    <label class="form-label mb-1">Security Captcha <span class="text-danger">*</span></label>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="captcha-display">8K7PQ</div>
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon"><i class="bi bi-check2-circle"></i></span>
+                                        <input 
+                                            type="text" 
+                                            id="captchaInput" 
+                                            name="captchaInput" 
+                                            class="form-control" 
+                                            placeholder="Type the 5 characters shown above" 
+                                            pattern="8K7PQ"
+                                            title="Type the exact captcha code (8K7PQ)"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 7. TERMS & CONDITIONS -->
+                                <div class="terms-check mb-4">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">
+                                        I accept and agree to the 
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms &amp; Conditions</a> 
+                                        and Academic Honor Code. <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+
+                                <!-- 8. SUBMIT BUTTON -->
+                                <button type="submit" class="register-button">
+                                    <span>Register Account</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+
+                                <!-- LOGIN LINK -->
+                                <p class="account-link text-center mt-3 mb-0">
+                                    Already have a student account?
+                                    <a href="login.html">Login here</a>
+                                </p>
+
+                            </form>
 
                         </div>
 
-                        <small
-                            id="genderError"
-                            class="error-message"
-                            aria-live="polite">
-                        </small>
-
-                    </fieldset>
-
-                </fieldset>
-
-
-                <!-- TERMS -->
-
-                <div class="form-group checkbox-group">
-
-                    <label for="terms">
-
-                        <input
-                            type="checkbox"
-                            id="terms"
-                            name="terms"
-                            required
-                            aria-describedby="termsError">
-
-                        I accept the Terms and Conditions
-                        <span aria-hidden="true">*</span>
-
-                    </label>
-
-                    <small
-                        id="termsError"
-                        class="error-message"
-                        aria-live="polite">
-                    </small>
-
+                    </div>
                 </div>
-
-
-                <!-- BUTTONS -->
-
-                <div class="form-actions">
-
-                    <button type="submit">
-                        Create Account
-                    </button>
-
-                    <button
-                        type="reset"
-                        class="secondary-button">
-                        Clear Form
-                    </button>
-
-                </div>
-
-
-                <p
-                    id="formStatus"
-                    role="status"
-                    aria-live="polite">
-                </p>
-
-            </form>
-
+            </div>
         </section>
-
     </main>
 
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="footer-content">
-
-            <section>
-                <h2>StudentHub</h2>
-
-                <p>
-                    A centralized student portal for academic
-                    and student services.
-                </p>
-            </section>
-
-            <nav aria-label="Footer navigation">
-
-                <h2>Quick Links</h2>
-
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-
-            </nav>
-
+    <!-- ================= TERMS MODAL ================= -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold">Student Terms &amp; Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body small">
+                    <p>1. <strong>Eligibility:</strong> Only actively enrolled university students are permitted to create an account.</p>
+                    <p>2. <strong>Resource Sharing:</strong> All materials downloaded from this hub are intended for personal educational use only.</p>
+                    <p>3. <strong>Data Security:</strong> Your student credentials and details are stored securely.</p>
+                </div>
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <p class="copyright">
-            &copy; 2026 StudentHub. All rights reserved.
-        </p>
-
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h2><i class="bi bi-mortarboard-fill me-2 text-primary-accent"></i>StudentHub</h2>
+                    <p>Your modern student portal for academic resources, campus events, and collaborative student services.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Quick Links</h3>
+                    <div class="footer-link-list">
+                        <a href="../index.html"><i class="bi bi-chevron-right me-1"></i> Home</a>
+                        <a href="about.html"><i class="bi bi-chevron-right me-1"></i> About</a>
+                        <a href="events.html"><i class="bi bi-chevron-right me-1"></i> Events</a>
+                        <a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                &copy; 2026 StudentHub. All rights reserved.
+            </div>
+        </div>
     </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        function applyTheme(theme) {
+            htmlElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (theme === 'dark') {
+                themeIcon.className = 'bi bi-sun-fill';
+            } else {
+                themeIcon.className = 'bi bi-moon-stars-fill';
+            }
+        }
+
+        applyTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    </script>
 
 </body>
 </html>
