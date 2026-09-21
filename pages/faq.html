@@ -344,60 +344,33 @@ This version uses modern interactive accordion styling with smooth toggle transi
     <!-- Bootstrap 5 JavaScript Bundle -->
     <script src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js)"></script>
 
-    <!-- Theme Switcher Script -->
-    <script>
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        const htmlElement = document.documentElement;
-
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        function applyTheme(theme) {
-            htmlElement.setAttribute('data-bs-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (theme === 'dark') {
-                themeIcon.className = 'bi bi-sun-fill';
-            } else {
-                themeIcon.className = 'bi bi-moon-stars-fill';
-            }
-        }
-
-        applyTheme(savedTheme);
-
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-
-        // Interactive Accordion Action
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const symbol = button.querySelector('.symbol');
-                const isOpen = answer.classList.contains('open');
-
-                // Close all other open accordion items
-                document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
-                document.querySelectorAll('.faq-question').forEach(btn => {
-                    btn.setAttribute('aria-expanded', 'false');
-                    btn.querySelector('.symbol').textContent = '+';
-                });
-
-                // Toggle selected
-                if (!isOpen) {
-                    answer.classList.add('open');
-                    button.setAttribute('aria-expanded', 'true');
-                    symbol.textContent = '−';
-                }
-            });
-        });
-    </script>
-
     <!-- FAQ JavaScript -->
     <script src="../js/faq.js"></script>
 
+    <!-- ================= MODAL POPUP ================= -->
+
+    <div id="welcomeModal" class="custom-modal">
+
+        <div class="custom-modal-content">
+
+            <button id="closeModal" class="modal-close">
+                &times;
+            </button>
+
+            <h2>Welcome to StudentHub</h2>
+
+            <p>
+                Explore academic resources, events, student services
+                and other features available on StudentHub.
+            </p>
+
+            <button id="modalOkBtn" class="btn btn-primary">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
 </body>
 
 </html>

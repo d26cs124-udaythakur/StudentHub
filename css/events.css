@@ -458,3 +458,72 @@ footer {
 .copyright p {
   margin: 0;
 }
+
+/* ================= CONTENT SLIDER ================= */
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.slide {
+    display: none;
+    min-height: 250px;
+    padding: 4rem 5rem;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-content {
+    max-width: 600px;
+}
+
+.slide-content h3 {
+    color: var(--text-main);
+    font-size: 2rem;
+}
+
+.slide-content p {
+    color: var(--text-sub);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-btn.prev {
+    left: 15px;
+}
+
+.slider-btn.next {
+    right: 15px;
+}

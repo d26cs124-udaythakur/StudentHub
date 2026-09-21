@@ -16,6 +16,24 @@
 
 <body>
 
+    <!-- ================= NOTIFICATION BANNER ================= -->
+
+    <div id="notificationBanner" class="notification-banner">
+
+        <div>
+            <i class="bi bi-info-circle-fill"></i>
+
+            <span>
+                Welcome to StudentHub! New academic events are now available.
+            </span>
+        </div>
+
+        <button id="closeNotification" aria-label="Close notification">
+            &times;
+        </button>
+
+    </div>
+
     <!-- ================= HEADER ================= -->
     <header>
         <!-- TOP HEADER -->
@@ -225,35 +243,35 @@
         </div>
     </footer>
 
+    <!-- ================= MODAL POPUP ================= -->
+
+    <div id="welcomeModal" class="custom-modal">
+
+        <div class="custom-modal-content">
+
+            <button id="closeModal" class="modal-close">
+                &times;
+            </button>
+
+            <h2>Welcome to StudentHub</h2>
+
+            <p>
+                Explore academic resources, events, student services
+                and other features available on StudentHub.
+            </p>
+
+            <button id="modalOkBtn" class="btn btn-primary">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Theme Switcher JavaScript -->
-    <script>
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        const htmlElement = document.documentElement;
+    <script src="js/index.js"></script>
 
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        function applyTheme(theme) {
-            htmlElement.setAttribute('data-bs-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (theme === 'dark') {
-                themeIcon.className = 'bi bi-sun-fill';
-            } else {
-                themeIcon.className = 'bi bi-moon-stars-fill';
-            }
-        }
-
-        applyTheme(savedTheme);
-
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-    </script>
 </body>
 </html>

@@ -83,195 +83,273 @@
                             </div>
 
                             <!-- FORM WITH NATIVE HTML5 VALIDATION -->
-                            <form id="registerForm" action="#" method="POST">
+                            <form id="registerForm" action="#" method="POST" novalidate>
 
-                                <!-- 1. FULL NAME -->
-                                <div class="form-group mb-3">
-                                    <label for="fullname">Full Name <span class="text-danger">*</span></label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon"><i class="bi bi-person"></i></span>
-                                        <input 
-                                            type="text" 
-                                            id="fullname" 
-                                            name="fullname" 
-                                            class="form-control" 
-                                            placeholder="e.g. Rahul Sharma" 
-                                            pattern="^[A-Za-z\s]{3,50}$"
-                                            title="Letters only, minimum 3 characters"
-                                            required>
-                                    </div>
+                            <!-- FULL NAME -->
+                            <div class="form-group mb-3">
+                                <label for="fullname">
+                                    Full Name <span class="text-danger">*</span>
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <span class="input-icon">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="fullname"
+                                        name="fullname"
+                                        class="form-control"
+                                        placeholder="e.g. Rahul Sharma"
+                                        required
+                                    >
                                 </div>
 
-                                <!-- 2. EMAIL & MOBILE NUMBER -->
-                                <div class="form-grid-2 mb-3">
-                                    <div class="form-group">
-                                        <label for="email">Student Email Address <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-envelope"></i></span>
-                                            <input 
-                                                type="email" 
-                                                id="email" 
-                                                name="email" 
-                                                class="form-control" 
-                                                placeholder="student@university.edu" 
-                                                required>
-                                        </div>
-                                    </div>
+                                <small class="error-message" id="fullnameError"></small>
+                            </div>
 
-                                    <div class="form-group">
-                                        <label for="mobile">Mobile Number <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-phone"></i></span>
-                                            <input 
-                                                type="tel" 
-                                                id="mobile" 
-                                                name="mobile" 
-                                                class="form-control" 
-                                                placeholder="10-digit mobile number" 
-                                                pattern="^[6-9][0-9]{9}$" 
-                                                maxlength="10" 
-                                                required>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <!-- 3. GENDER RADIO TILES -->
-                                <div class="form-group mb-3">
-                                    <label class="d-block mb-2">Gender <span class="text-danger">*</span></label>
-                                    <div class="gender-radio-group">
-                                        <label class="gender-option">
-                                            <input type="radio" name="gender" value="male" required>
-                                            <span class="gender-pill">
-                                                <i class="bi bi-gender-male me-1"></i> Male
-                                            </span>
-                                        </label>
-                                        <label class="gender-option">
-                                            <input type="radio" name="gender" value="female" required>
-                                            <span class="gender-pill">
-                                                <i class="bi bi-gender-female me-1"></i> Female
-                                            </span>
-                                        </label>
-                                        <label class="gender-option">
-                                            <input type="radio" name="gender" value="other" required>
-                                            <span class="gender-pill">
-                                                <i class="bi bi-gender-ambiguous me-1"></i> Other
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
+                            <!-- EMAIL & MOBILE -->
+                            <div class="form-grid-2 mb-3">
 
-                                <!-- 4. COURSE & ACADEMIC YEAR -->
-                                <div class="form-grid-2 mb-3">
-                                    <div class="form-group">
-                                        <label for="course">Course / Degree <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-book"></i></span>
-                                            <select id="course" name="course" class="form-select" required>
-                                                <option value="" disabled selected>Select Course</option>
-                                                <option value="btech-cse">B.Tech - Computer Science &amp; Engineering</option>
-                                                <option value="btech-it">B.Tech - Information Technology</option>
-                                                <option value="bca">BCA - Computer Applications</option>
-                                                <option value="mca">MCA - Master of Computer Applications</option>
-                                                <option value="bba">BBA - Business Administration</option>
-                                                <option value="mba">MBA - Master of Business Administration</option>
-                                                <option value="bsc">B.Sc - Science &amp; Mathematics</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="year">Current Academic Year <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-calendar3"></i></span>
-                                            <select id="year" name="year" class="form-select" required>
-                                                <option value="" disabled selected>Select Year</option>
-                                                <option value="1">1st Year (Freshman)</option>
-                                                <option value="2">2nd Year (Sophomore)</option>
-                                                <option value="3">3rd Year (Junior)</option>
-                                                <option value="4">4th Year (Senior)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- 5. PASSWORD & CONFIRM PASSWORD -->
-                                <div class="form-grid-2 mb-3">
-                                    <div class="form-group">
-                                        <label for="password">Password <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-lock"></i></span>
-                                            <input 
-                                                type="password" 
-                                                id="password" 
-                                                name="password" 
-                                                class="form-control" 
-                                                placeholder="At least 8 characters" 
-                                                minlength="8" 
-                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                                title="Min 8 characters with at least 1 uppercase, 1 lowercase, and 1 number"
-                                                required>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="confirmPassword">Confirm Password <span class="text-danger">*</span></label>
-                                        <div class="input-wrapper">
-                                            <span class="input-icon"><i class="bi bi-shield-lock"></i></span>
-                                            <input 
-                                                type="password" 
-                                                id="confirmPassword" 
-                                                name="confirmPassword" 
-                                                class="form-control" 
-                                                placeholder="Repeat password" 
-                                                minlength="8" 
-                                                required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- 6. CAPTCHA -->
-                                <div class="captcha-wrapper mb-3">
-                                    <label class="form-label mb-1">Security Captcha <span class="text-danger">*</span></label>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <div class="captcha-display">8K7PQ</div>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon"><i class="bi bi-check2-circle"></i></span>
-                                        <input 
-                                            type="text" 
-                                            id="captchaInput" 
-                                            name="captchaInput" 
-                                            class="form-control" 
-                                            placeholder="Type the 5 characters shown above" 
-                                            pattern="8K7PQ"
-                                            title="Type the exact captcha code (8K7PQ)"
-                                            required>
-                                    </div>
-                                </div>
-
-                                <!-- 7. TERMS & CONDITIONS -->
-                                <div class="terms-check mb-4">
-                                    <input type="checkbox" id="terms" name="terms" required>
-                                    <label for="terms">
-                                        I accept and agree to the 
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms &amp; Conditions</a> 
-                                        and Academic Honor Code. <span class="text-danger">*</span>
+                                <div class="form-group">
+                                    <label for="email">
+                                        Student Email <span class="text-danger">*</span>
                                     </label>
+
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-envelope"></i>
+                                        </span>
+
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            class="form-control"
+                                            placeholder="student@example.com"
+                                            required
+                                        >
+                                    </div>
+
+                                    <small class="error-message" id="emailError"></small>
                                 </div>
 
-                                <!-- 8. SUBMIT BUTTON -->
-                                <button type="submit" class="register-button">
-                                    <span>Register Account</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </button>
 
-                                <!-- LOGIN LINK -->
-                                <p class="account-link text-center mt-3 mb-0">
-                                    Already have a student account?
-                                    <a href="login.html">Login here</a>
-                                </p>
+                                <div class="form-group">
+                                    <label for="mobile">
+                                        Mobile Number <span class="text-danger">*</span>
+                                    </label>
 
-                            </form>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-phone"></i>
+                                        </span>
+
+                                        <input
+                                            type="tel"
+                                            id="mobile"
+                                            name="mobile"
+                                            class="form-control"
+                                            placeholder="10-digit mobile number"
+                                            maxlength="10"
+                                            required
+                                        >
+                                    </div>
+
+                                    <small class="error-message" id="mobileError"></small>
+                                </div>
+
+                            </div>
+
+
+                            <!-- GENDER -->
+                            <div class="form-group mb-3">
+
+                                <label>
+                                    Gender <span class="text-danger">*</span>
+                                </label>
+
+                                <div class="gender-radio-group">
+
+                                    <label class="gender-option">
+                                        <input type="radio" name="gender" value="male">
+                                        <span class="gender-pill">
+                                            <i class="bi bi-gender-male"></i> Male
+                                        </span>
+                                    </label>
+
+                                    <label class="gender-option">
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="gender-pill">
+                                            <i class="bi bi-gender-female"></i> Female
+                                        </span>
+                                    </label>
+
+                                    <label class="gender-option">
+                                        <input type="radio" name="gender" value="other">
+                                        <span class="gender-pill">
+                                            <i class="bi bi-gender-ambiguous"></i> Other
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <small class="error-message" id="genderError"></small>
+
+                            </div>
+
+
+                            <!-- COURSE & YEAR -->
+                            <div class="form-grid-2 mb-3">
+
+                                <div class="form-group">
+
+                                    <label for="course">
+                                        Course <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-book"></i>
+                                        </span>
+
+                                        <select id="course" name="course" class="form-select">
+                                            <option value="">Select Course</option>
+                                            <option value="cse">B.Tech - CSE</option>
+                                            <option value="it">B.Tech - IT</option>
+                                            <option value="bca">BCA</option>
+                                            <option value="mca">MCA</option>
+                                        </select>
+                                    </div>
+
+                                    <small class="error-message" id="courseError"></small>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="year">
+                                        Academic Year <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-calendar3"></i>
+                                        </span>
+
+                                        <select id="year" name="year" class="form-select">
+                                            <option value="">Select Year</option>
+                                            <option value="1">1st Year</option>
+                                            <option value="2">2nd Year</option>
+                                            <option value="3">3rd Year</option>
+                                            <option value="4">4th Year</option>
+                                        </select>
+                                    </div>
+
+                                    <small class="error-message" id="yearError"></small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+                            <div class="form-grid-2 mb-3">
+
+                                <div class="form-group">
+
+                                    <label for="password">
+                                        Password <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-lock"></i>
+                                        </span>
+
+                                        <input
+                                            type="password"
+                                            id="password"
+                                            name="password"
+                                            class="form-control"
+                                            placeholder="At least 8 characters"
+                                            required
+                                        >
+                                    </div>
+
+                                    <!-- Password strength -->
+                                    <div class="password-strength">
+                                        <div id="strengthBar"></div>
+                                    </div>
+
+                                    <small id="strengthText">Password strength: —</small>
+
+                                    <small class="error-message" id="passwordError"></small>
+
+                                </div>
+
+
+                                <!-- CONFIRM PASSWORD -->
+                                <div class="form-group">
+
+                                    <label for="confirmPassword">
+                                        Confirm Password <span class="text-danger">*</span>
+                                    </label>
+
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">
+                                            <i class="bi bi-shield-lock"></i>
+                                        </span>
+
+                                        <input
+                                            type="password"
+                                            id="confirmPassword"
+                                            name="confirmPassword"
+                                            class="form-control"
+                                            placeholder="Repeat password"
+                                            required
+                                        >
+                                    </div>
+
+                                    <small class="error-message" id="confirmPasswordError"></small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TERMS -->
+                            <div class="terms-check mb-4">
+
+                                <input type="checkbox" id="terms" name="terms">
+
+                                <label for="terms">
+                                    I accept and agree to the
+                                    <a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#termsModal">
+                                        Terms & Conditions
+                                    </a>
+                                    <span class="text-danger">*</span>
+                                </label>
+
+                                <small class="error-message" id="termsError"></small>
+
+                            </div>
+
+
+                            <!-- SUBMIT -->
+                            <button type="submit" class="register-button">
+                                <span>Register Account</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+
+                            <!-- SUCCESS MESSAGE -->
+                            <p id="successMessage" class="success-message"></p>
+
+                        </form>
 
                         </div>
 
@@ -328,33 +406,8 @@
     <!-- Bootstrap 5 JavaScript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Theme Switcher Script -->
-    <script>
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        const htmlElement = document.documentElement;
-
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        function applyTheme(theme) {
-            htmlElement.setAttribute('data-bs-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (theme === 'dark') {
-                themeIcon.className = 'bi bi-sun-fill';
-            } else {
-                themeIcon.className = 'bi bi-moon-stars-fill';
-            }
-        }
-
-        applyTheme(savedTheme);
-
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-    </script>
+    <!-- Register JavaScript -->
+    <script src="../js/register.js"></script>
 
 </body>
 </html>
