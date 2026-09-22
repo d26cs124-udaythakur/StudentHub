@@ -136,107 +136,54 @@
                     </div>
 
                 </section>
-                
+
                 <!-- ================= EVENTS TABLE ================= -->
                 <div class="table-container">
                     <div class="table-responsive">
+                        <div class="event-controls">
+
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Search events..."
+                            >
+
+                            <select id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Competition">Competition</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Cultural">Cultural</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Exhibition">Exhibition</option>
+                            </select>
+
+                            <select id="sortSelect">
+                                <option value="dateAsc">Date: Earliest First</option>
+                                <option value="dateDesc">Date: Latest First</option>
+                                <option value="nameAsc">Name: A-Z</option>
+                                <option value="nameDesc">Name: Z-A</option>
+                            </select>
+
+                        </div>
+
                         <table class="table align-middle">
                             <thead>
-                                <tr>
+                               <tr>
                                     <th scope="col" style="width: 40%;">Event Details</th>
-                                    <th scope="col" style="width: 20%;">Date &amp; Schedule</th>
-                                    <th scope="col" style="width: 20%;">Location / Venue</th>
+                                    <th scope="col" style="width: 20%; white-space: nowrap;">Date &amp; Schedule</th>
+                                    <th scope="col" style="width: 20%; white-space: nowrap;">Location / Venue</th>
                                     <th scope="col" class="text-end" style="width: 20%;">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-
-                                <!-- EVENT 1 -->
-                                <tr>
-                                    <td>
-                                        <div class="event-info">
-                                            <span class="badge-tag tag-tech">Technical</span>
-                                            <h3 class="event-title">Annual Tech Talk 2026</h3>
-                                            <p class="event-desc">Keynote sessions on Cloud Native Architecture, Edge AI, and Quantum Computing trends.</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="event-meta">
-                                            <span class="date-text"><i class="bi bi-calendar3 me-1 text-primary-accent"></i> 25 May 2026</span>
-                                            <span class="time-text"><i class="bi bi-clock me-1 text-muted"></i> 10:00 AM - 01:00 PM</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="venue-meta">
-                                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-                                            <span>Main Auditorium, Block C</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-end">
-                                        <button type="button" class="btn-register-event" onclick="registerEvent('Tech Talk 2026')">
-                                            Register <i class="bi bi-arrow-right ms-1"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- EVENT 2 -->
-                                <tr>
-                                    <td>
-                                        <div class="event-info">
-                                            <span class="badge-tag tag-workshop">Workshop</span>
-                                            <h3 class="event-title">Full-Stack Coding Bootcamp</h3>
-                                            <p class="event-desc">Hands-on interactive lab exploring containerization with Docker and responsive UI builds.</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="event-meta">
-                                            <span class="date-text"><i class="bi bi-calendar3 me-1 text-primary-accent"></i> 30 May 2026</span>
-                                            <span class="time-text"><i class="bi bi-clock me-1 text-muted"></i> 02:00 PM - 05:30 PM</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="venue-meta">
-                                            <i class="bi bi-laptop text-primary me-1"></i>
-                                            <span>Computer Lab 04, IT Wing</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-end">
-                                        <button type="button" class="btn-register-event" onclick="registerEvent('Coding Workshop')">
-                                            Register <i class="bi bi-arrow-right ms-1"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- EVENT 3 -->
-                                <tr>
-                                    <td>
-                                        <div class="event-info">
-                                            <span class="badge-tag tag-cultural">Cultural</span>
-                                            <h3 class="event-title">University Cultural Fest 'Sanskriti'</h3>
-                                            <p class="event-desc">Annual cultural extravaganza featuring inter-college music, drama, fine arts, and dance leagues.</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="event-meta">
-                                            <span class="date-text"><i class="bi bi-calendar3 me-1 text-primary-accent"></i> 05 Jun 2026</span>
-                                            <span class="time-text"><i class="bi bi-clock me-1 text-muted"></i> 09:00 AM Onwards</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="venue-meta">
-                                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>
-                                            <span>University Open Grounds</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-end">
-                                        <button type="button" class="btn-register-event" onclick="registerEvent('Cultural Fest')">
-                                            Register <i class="bi bi-arrow-right ms-1"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
+                            <tbody id="eventsContainer">
+                                <!-- Events will be dynamically loaded from events.json -->
                             </tbody>
                         </table>
+
+                        <div id="pagination"></div>
+
                     </div>
                 </div>
 

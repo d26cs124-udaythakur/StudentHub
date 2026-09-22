@@ -504,3 +504,264 @@ footer {
 .copyright p {
   margin: 0;
 }
+
+/* ================= STUDENT DIRECTORY ================= */
+
+.student-directory {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.student-header {
+    margin-bottom: 22px;
+}
+
+.student-header h2 {
+    margin-bottom: 6px;
+}
+
+.student-header p {
+    margin: 0;
+    color: #777b8a;
+}
+
+
+/* Controls */
+
+.student-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+#studentSearch {
+    width: 280px;
+}
+
+#studentSearch,
+#courseFilter,
+#studentSort {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #dddff0;
+    border-radius: 7px;
+    background: #fff;
+    outline: none;
+}
+
+#courseFilter,
+#studentSort {
+    min-width: 150px;
+}
+
+
+/* 3 × 3 Student Grid */
+
+#studentsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+
+/* Student Cards */
+
+.student-card {
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e5e7ef;
+    border-radius: 10px;
+    min-height: 120px;
+    box-sizing: border-box;
+}
+
+.student-card h3 {
+    margin: 0 0 7px;
+    font-size: 16px;
+}
+
+.student-card p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #777b8a;
+}
+
+.student-course {
+    color: #5548e8 !important;
+    font-weight: 600;
+}
+
+
+/* Pagination */
+
+#studentPagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+#studentPagination button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dddff0;
+    border-radius: 7px;
+    background: white;
+    cursor: pointer;
+}
+
+#studentPagination button.active {
+    background: #5548e8;
+    color: white;
+    border-color: #5548e8;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .student-directory {
+        width: 92%;
+        padding: 25px 20px;
+    }
+
+    #studentsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    #studentSearch,
+    #courseFilter,
+    #studentSort {
+        width: 100%;
+    }
+}
+
+/* ================= NOTICES ================= */
+
+.notice-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#noticeSearch,
+#noticeCategory,
+#noticeSort {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #dddff0;
+    border-radius: 7px;
+    background: white;
+}
+
+#noticeSearch {
+    width: 280px;
+}
+
+#noticeCategory,
+#noticeSort {
+    min-width: 160px;
+}
+
+
+/* Notice Cards */
+
+#noticesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notice-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 20px;
+
+    background: white;
+    border: 1px solid #e5e7ef;
+    border-radius: 10px;
+}
+
+.notice-content h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.notice-content p {
+    margin: 0 0 8px;
+    color: #777b8a;
+    font-size: 13px;
+}
+
+.notice-category {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #eeeeff;
+    color: #5548e8;
+}
+
+.notice-date {
+    color: #8b8fa3;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* Pagination */
+
+#noticePagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+#noticePagination button {
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid #dddff0;
+    border-radius: 7px;
+
+    background: white;
+    cursor: pointer;
+}
+
+#noticePagination button.active {
+    background: #5548e8;
+    color: white;
+    border-color: #5548e8;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    #noticeSearch,
+    #noticeCategory,
+    #noticeSort {
+        width: 100%;
+    }
+
+    .notice-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

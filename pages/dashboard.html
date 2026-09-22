@@ -128,37 +128,87 @@
         <!-- ================= RECENT NOTICES ================= -->
         <section class="recent-notices">
             <div class="container">
-                <h2>Recent Notices</h2>
 
-                <div class="notice-list">
-                    <article class="notice">
-                        <span class="notice-title">
-                            <i class="bi bi-bell me-2 text-indigo"></i> Welcome to StudentHub Portal!
-                        </span>
-                        <time datetime="2026-05-20">
-                            <i class="bi bi-clock me-1"></i> 20 May 2026
-                        </time>
-                    </article>
-
-                    <article class="notice">
-                        <span class="notice-title">
-                            <i class="bi bi-file-earmark-text me-2 text-indigo"></i> Mid Term Exam Schedule Released
-                        </span>
-                        <time datetime="2026-05-18">
-                            <i class="bi bi-clock me-1"></i> 18 May 2026
-                        </time>
-                    </article>
-
-                    <article class="notice">
-                        <span class="notice-title">
-                            <i class="bi bi-door-open me-2 text-indigo"></i> Library Timings Updated
-                        </span>
-                        <time datetime="2026-05-15">
-                            <i class="bi bi-clock me-1"></i> 15 May 2026
-                        </time>
-                    </article>
+                <div class="section-heading">
+                    <h2>Recent Notices</h2>
                 </div>
+
+                <div class="notice-controls">
+
+                    <input
+                        type="text"
+                        id="noticeSearch"
+                        placeholder="Search notices..."
+                    >
+
+                    <select id="noticeCategory">
+                        <option value="all">All Categories</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Examination">Examination</option>
+                        <option value="General">General</option>
+                        <option value="Library">Library</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Events">Events</option>
+                        <option value="Placement">Placement</option>
+                    </select>
+
+                    <select id="noticeSort">
+                        <option value="dateDesc">Latest First</option>
+                        <option value="dateAsc">Oldest First</option>
+                        <option value="nameAsc">Title: A-Z</option>
+                        <option value="nameDesc">Title: Z-A</option>
+                    </select>
+
+                </div>
+
+                <div id="noticesContainer"></div>
+
+                <div id="noticePagination"></div>
+
             </div>
+        </section>
+        
+        <!-- ================= STUDENT DIRECTORY ================= -->
+
+        <section class="student-directory">
+
+            <div class="container">
+
+                <div class="student-header">
+                    <h2>Engage With Students</h2>
+                    <p>Browse student profiles and skills.</p>
+                </div>
+
+                <div class="student-controls">
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search students..."
+                    >
+
+                    <select id="courseFilter">
+                        <option value="all">All Courses</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="CE">CE</option>
+                    </select>
+
+                    <select id="studentSort">
+                        <option value="nameAsc">Name: A-Z</option>
+                        <option value="nameDesc">Name: Z-A</option>
+                        <option value="semesterAsc">Semester: Low-High</option>
+                        <option value="semesterDesc">Semester: High-Low</option>
+                    </select>
+
+                </div>
+
+                <div id="studentsContainer"></div>
+
+                <div id="studentPagination"></div>
+
+            </div>
+
         </section>
 
         <!-- ================= QUICK LINKS ================= -->
@@ -223,6 +273,12 @@
 
     <!-- Dashboard JavaScript -->
     <script src="../js/dashboard.js"></script>
+
+    <!-- Student Directory JavaScript -->
+    <script src="../js/students.js"></script>
+
+    <!-- Notices JavaScript -->
+    <script src="../js/notices.js"></script>
 
 </body>
 </html>
